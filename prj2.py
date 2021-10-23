@@ -27,3 +27,19 @@ worksheet.write_string(0, 16, 'Abstract')
 worksheet.write_string(0, 17, 'FA Abstarct')
 worksheet.write_string(0, 18, 'pdf link')
 row = 1
+
+url = 'http://dam.journal.art.ac.ir/'
+driver = webdriver.Chrome()
+driver.get(url)
+ik = driver.find_element_by_xpath('/html/body/div[1]/div/a').click()
+title = driver.find_elements_by_css_selector('.fa-plus')
+for i in title:
+    i.click()
+    sleep(1)
+links = driver.find_elements_by_css_selector('.issue_dv a')
+xml_link_list = []
+for i in links:
+    page_link = i.get_attribute('href')
+    xml_link_code = re.findall(r'.+_(\d+).', page_link)[0]
+    xml_link = 'http://dam.journal.art.ac.ir/?_action=xml&issue=' + xml_link_code
+    xml_link_list.append(xml_link)  
