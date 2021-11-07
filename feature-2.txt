@@ -1,2 +1,4 @@
 line1 = salam
 line2 = halet khube?
+line3 = javab bede!
+line4 = negaranetam :(
