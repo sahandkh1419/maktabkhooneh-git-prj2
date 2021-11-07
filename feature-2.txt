@@ -1,2 +1,2 @@
 line1 = salam
-line2 = khubi?
+line2 = halet khube?
